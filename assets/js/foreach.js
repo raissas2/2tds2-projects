@@ -22,34 +22,58 @@
 //     }
 // });
 
- const cars = [
-     {
-         marca: "Ford",
-        modelo: "Focus",
-     },
-    {
-        marca:"BMW",
-         modelo:"BMW Z4",
-    },
-     {
-         marca:"Fiat",
-        modelo:"Palio",
-     },
-     {
-        marca:"Audi",
-         modelo:"A3",
-     },
- ];
- cars.forEach((car) => {
-    console.log(`Marca: ${car.marca} 
-   Modelo: ${car.modelo}`);
- });
+//  const cars = [
+//      {
+//           marca: "Ford",
+//        modelo: "Focus",
+//      },
+//     {
+//          marca:"BMW",
+//          modelo:"BMW Z4",
+//      },
+//      {
+//           marca:"Fiat",
+//          modelo:"Palio",
+//      },
+//       {
+//          marca:"Audi",
+//           modelo:"A3",
+//       },
+//   ];
+//  cars.forEach((car) => {
+//      console.log(`Marca: ${car.marca} 
+//     Modelo: ${car.modelo}`);
+//   });
 
 class Car {
-    constructor(brand,model){
-        this.brand = brand;
-        this.model = model;
+    constructor(marca,modelo){
+        this.marca = marca;
+        this.modelo = modelo;
     }
 }
+class CarsList{
+    constructor(){
+       this.cars=[];
+    }
+    addCar(param){
+        this.cars.push(param);
+    }
+}
+const carsList = new CarsList();
 
+function createCar(){
+    const marca = document.getElementById("brand").value;
+    const modelo = document.getElementById("model").value;
 
+    const car = new Car (marca,modelo);
+
+    carsList.addCar(car);
+    
+    document.getElementById("marca").value="";
+    document.getElementById("modelo").value="";
+
+    carsList.cars.forEach((car) => {
+        console.log(`Marca: `);
+    })
+
+}
