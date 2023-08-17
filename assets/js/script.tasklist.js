@@ -201,4 +201,3 @@ class CamaraSecreta {
     //metodo privado
     myAccess1.acessToChamber();
 */
-
